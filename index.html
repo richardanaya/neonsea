@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .game-screen {
+        background: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: -webkit-fill-available;
+        display: grid;
+        grid-template-rows: 1.2rem 3rem auto 1.2rem 2rem;
+        grid-gap: 0.5rem;
+        padding: 0.5rem 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: #efefef;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        font-family: "Exo 2", sans-serif;
+        font-weight: 200;
+        user-select: none;
+      }
+
+      .active-effects-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 0.5rem;
+        align-items: center;
+      }
+
+      .abilities-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: 0 0.5rem;
+        align-items: center;
+        align-items: center;
+      }
+
+      .game-screen-row canvas {
+        width: 100%;
+        height: 100%;
+        border-top: solid 1px white;
+        border-bottom: solid 1px white;
+      }
+
+      .health-experience-actions-row {
+        display: grid;
+        grid-template-columns: auto 8rem;
+        grid-template-rows: 1fr 1fr;
+        margin: 0 0.5rem;
+      }
+
+      .health-experience-actions-row .actions {
+        grid-row-start: span 2;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .health-experience-actions-row .actions div {
+        display: inline-block;
+        border: solid 1px white;
+        padding: 0.5rem 0.7rem;
+        cursor: pointer;
+      }
+
+      .stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr auto;
+        margin: 0 0.5rem;
+        align-items: center;
+      }
+
+      .action {
+        border: solid 1px white;
+        padding: 0.2rem;
+        text-align: center;
+        margin: 0.1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <div class="game-screen">
+    <div class="stats-row">
+      <div>Wintermute</div>
+      <div>25° Sated Quenched</div>
+      <div>57/250#</div>
+      <div>65¥</div>
+      <div>DMG 4 DEF 3</div>
+      <div>Evening Mar 12</div>
+      <div>Night City</div>
+    </div>
+    <div class="health-experience-actions-row">
+      <div>Health</div>
+      <div class="actions">
+        <div>L</div>
+        <div>U</div>
+        <div>D</div>
+      </div>
+      <div>Street Cred</div>
+    </div>
+    <div class="game-screen-row"><canvas></canvas></div>
+    <div class="active-effects-row">
+      <div><span class="label">Active Effects:</span></div>
+      <div>
+        <span class="label">Target:</span>
+        <span class="label-value">[none]</span>
+      </div>
+    </div>
+    <div class="abilities-row">
+      <div>Abilities:</div>
+      <div class="action">hack</div>
+      <div class="action">rest</div>
+      <div class="action">sprint</div>
+      <div class="action">intimidate</div>
+    </div>
+  </div>
+  <script>
+    function resize() {
+      let c = document.querySelector("canvas");
+      c.width = c.offsetWidth;
+      c.height = c.offsetHeight;
+      let ctx = c.getContext("2d");
+      ctx.fillStyle = "red";
+      ctx.fillRect(0, 0, 20, 20);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+  </script>
+</html>
