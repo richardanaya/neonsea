@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;400&display=swap"
@@ -15,9 +16,21 @@
         height: 100%;
         height: -webkit-fill-available;
         display: grid;
-        grid-template-rows: 1.2rem 3rem auto 1.2rem 2rem;
+        grid-template-rows: 5rem 3rem auto 1.2rem 6rem;
         grid-gap: 0.5rem;
         padding: 0.5rem 0;
+      }
+
+      @media only screen and (min-width: 420px) {
+        .game-screen {
+          grid-template-rows: 3rem 3rem auto 1.2rem 4rem;
+        }
+      }
+
+      @media only screen and (min-width: 950px) {
+        .game-screen {
+          grid-template-rows: 1.2rem 3rem auto 1.2rem 2rem;
+        }
       }
 
       html,
@@ -41,10 +54,22 @@
 
       .abilities-row {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         margin: 0 0.5rem;
         align-items: center;
         align-items: center;
+      }
+
+      @media only screen and (min-width: 420px) {
+        .abilities-row {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
+      @media only screen and (min-width: 950px) {
+        .abilities-row {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
       }
 
       .game-screen-row canvas {
@@ -77,9 +102,21 @@
 
       .stats-row {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr auto;
+        grid-template-columns: 1fr auto;
         margin: 0 0.5rem;
         align-items: center;
+      }
+
+      @media only screen and (min-width: 420px) {
+        .stats-row {
+          grid-template-columns: 1fr 1fr auto;
+        }
+      }
+
+      @media only screen and (min-width: 950px) {
+        .stats-row {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr auto;
+        }
       }
 
       .action {
