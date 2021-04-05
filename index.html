@@ -8,8 +8,7 @@
       rel="stylesheet"
     />
     <style>
-      .game-screen {
-        background: black;
+      .container {
         position: absolute;
         top: 0;
         left: 0;
@@ -17,10 +16,14 @@
         height: 100vh;
         height: -webkit-fill-available;
         height: fill-available;
+        padding: 0.5rem 0;
+      }
+
+      .game-screen {
         display: grid;
         grid-template-rows: 5rem 3rem auto 4rem 6rem;
         grid-gap: 0.5rem;
-        padding: 0.5rem 0;
+        height: 100%;
       }
 
       @media only screen and (min-width: 420px) {
@@ -37,6 +40,7 @@
 
       html,
       body {
+        background: black;
         margin: 0;
         padding: 0;
         color: #efefef;
@@ -150,40 +154,42 @@
       }
     </style>
   </head>
-  <div class="game-screen">
-    <div class="stats-row">
-      <div>Wintermute</div>
-      <div>25° Sated Quenched</div>
-      <div>57/250#</div>
-      <div>65¥</div>
-      <div>DMG 4 DEF 3</div>
-      <div>Evening Mar 12</div>
-      <div>Night City</div>
-    </div>
-    <div class="health-experience-actions-row">
-      <div class="health">Health 10/20</div>
-      <div class="actions">
-        <div>L</div>
-        <div>H</div>
-        <div>U</div>
-        <div>D</div>
+  <div class="container">
+    <div class="game-screen">
+      <div class="stats-row">
+        <div>Wintermute</div>
+        <div>25° Sated Quenched</div>
+        <div>57/250#</div>
+        <div>65¥</div>
+        <div>DMG 4 DEF 3</div>
+        <div>Evening Mar 12</div>
+        <div>Night City</div>
       </div>
-      <div class="street-cred">Street Cred 450/1000</div>
-    </div>
-    <div class="game-screen-row"><canvas></canvas></div>
-    <div class="active-effects-row">
-      <div><span class="label">Active Effects:</span></div>
-      <div>
-        <span class="label">Target:</span>
-        <span class="label-value">[none]</span>
+      <div class="health-experience-actions-row">
+        <div class="health">Health 10/20</div>
+        <div class="actions">
+          <div>L</div>
+          <div>H</div>
+          <div>U</div>
+          <div>D</div>
+        </div>
+        <div class="street-cred">Street Cred 450/1000</div>
       </div>
-    </div>
-    <div class="abilities-row">
-      <div>Abilities:</div>
-      <div class="action">hack</div>
-      <div class="action">rest</div>
-      <div class="action">sprint</div>
-      <div class="action">intimidate</div>
+      <div class="game-screen-row"><canvas></canvas></div>
+      <div class="active-effects-row">
+        <div><span class="label">Active Effects:</span></div>
+        <div>
+          <span class="label">Target:</span>
+          <span class="label-value">[none]</span>
+        </div>
+      </div>
+      <div class="abilities-row">
+        <div>Abilities:</div>
+        <div class="action">hack</div>
+        <div class="action">rest</div>
+        <div class="action">sprint</div>
+        <div class="action">intimidate</div>
+      </div>
     </div>
   </div>
   <script>
